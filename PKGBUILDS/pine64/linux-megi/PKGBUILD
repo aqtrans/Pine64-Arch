@@ -6,7 +6,7 @@ buildarch=8
 pkgbase=linux-megi
 _desc="Megous Kernel"
 pkgver=6.4.1
-pkgrel=1
+pkgrel=2
 arch=('aarch64')
 url="https://github.com/megous/linux"
 license=('GPL2')
@@ -32,24 +32,26 @@ source=("linux-$_commit.tar.gz::https://github.com/megous/linux/archive/${_commi
         # PineTab Patches
         'pinetab-bluetooth.patch'
         'pinetab-accelerometer.patch'
-        '0002-dts-add-pinetab-dev-old-display-panel.patch'
+        #'0002-dts-add-pinetab-dev-old-display-panel.patch'
         'dts-pinetab-make-audio-routing-consistent-with-pinephone.patch'
+	'dts-pinetab-fix-display.patch'
         # Bootsplash
         '0002-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'
         '0003-revert-fbcon-remove-no-op-fbcon_set_origin.patch'
         '0004-revert-fbcon-remove-soft-scrollback-code.patch'
-        '0001-bootsplash.patch'
-        '0002-bootsplash.patch'
-        '0003-bootsplash.patch'
-        '0004-bootsplash.patch'
-        '0005-bootsplash.patch'
-        '0006-bootsplash.patch'
-        '0007-bootsplash.patch'
-        '0008-bootsplash.patch'
-        '0009-bootsplash.patch'
-        '0010-bootsplash.patch'
-        '0011-bootsplash.patch'
-        '0012-bootsplash.patch')
+        #'0001-bootsplash.patch'
+        #'0002-bootsplash.patch'
+        #'0003-bootsplash.patch'
+        #'0004-bootsplash.patch'
+        #'0005-bootsplash.patch'
+        #'0006-bootsplash.patch'
+        #'0007-bootsplash.patch'
+        #'0008-bootsplash.patch'
+        #'0009-bootsplash.patch'
+        #'0010-bootsplash.patch'
+        #'0011-bootsplash.patch'
+        #'0012-bootsplash.patch'
+	)
 
 prepare() {
   cd linux-$_commit
@@ -261,20 +263,8 @@ md5sums=('f2eaa521ceba559e3b61c18ed77a56ca'
          '9777300e413cf185e1f408404f5c206d'
          '85d8339bc3d5daf45aa579d578ef0255'
          'd0fd6bd627223d4c9fc001ffff9df401'
-         '3182f25beb0b76e8abd2e9de8213351d'
          '60e9d1ccba52bd2634fbe8034b110e36'
+         '1b4ea887c298871812dee1771e59d7f6'
          'a31a435ab6cd8e7a47601159d665ce50'
          'fed6ae4ac4c3f56178fa4aca6c934d6f'
-         'ee3fad8e3468bba539a42ee3ed2b488f'
-         '8878beda05ef17755a6228ab3250bbbc'
-         'cd3d72f7f71192225f2126abe11800a9'
-         'a6407dceae1838f5aa27450401a91be6'
-         'cb78b1c11b917a4d31c4b1567183b76f'
-         '3efea575da7f02ba94789d3b6b81e11f'
-         '2529ad13791b259d80c9d5d702187a65'
-         'cb296d7788098cf478c46c0d21376719'
-         '50255aac36e002afa477e4527a0550af'
-         '6b6def41b404422dc04b39e2f1adffc8'
-         '1ec393108026b407944905373e261c71'
-         'd6b7e4e43e42128cf950251e0d0aee23'
-         '935254d6c66995f5e5f7d3a89566aa7a')
+         'ee3fad8e3468bba539a42ee3ed2b488f')
